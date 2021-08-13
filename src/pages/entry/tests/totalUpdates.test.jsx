@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react"; 
+import { render, screen } from "../../../test-utils/testing-library-utils"; 
 import userEvent from "@testing-library/user-event";
 import Options from "../Options";
 
@@ -16,7 +16,7 @@ test('update scoop subtotal when scoops change', async () => {
   expect(subTotal).toHaveTextContent('2.00');
 
   // update chocolate scoop to 2 and update subtotal
-  const chocolateInput = screen.findByRole('spinbutton', { name: 'Chocolate' });
+  const chocolateInput = await screen.findByRole('spinbutton', { name: 'Chocolate' });
   userEvent.clear(chocolateInput);
   userEvent.type(chocolateInput, '2');
   expect(subTotal).toHaveTextContent('6.00');
