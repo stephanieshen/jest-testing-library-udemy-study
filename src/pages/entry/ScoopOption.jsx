@@ -4,10 +4,6 @@ import Row from 'react-bootstrap/Row';
 
 const ScoopOption = ({ name, imagePath, updateCount }) => {
 
-  const handleChange = (e) => {
-    updateCount(name, e.target.value);
-  }
-
   return (
     <Col xs={12} sm={6} md={4}>
       <img
@@ -28,7 +24,9 @@ const ScoopOption = ({ name, imagePath, updateCount }) => {
           <Form.Control
             type="number"
             defaultValue={0}
-            onChange={handleChange}
+            onChange={(e) => {
+              updateCount(name, e.target.value);
+            }}
           />
         </Col>
       </Form.Group>
