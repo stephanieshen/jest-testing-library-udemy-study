@@ -1,14 +1,6 @@
 import { useEffect, useMemo, useState, useContext, createContext } from "react";
 import { pricePerItem } from "../constants";
-
-
-const formatCurrency = (amount) => {
-  return new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 2
-  }).format(amount);
-}
+import { formatCurrency } from "../utilities";
 
 const calculateSubtotal = (optionType, optionCounts) => {
   let optionsTotal = 0;
