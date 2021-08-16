@@ -6,10 +6,22 @@ const ToppingOption = ({ name, imagePath, updateCount }) => {
 
   return (
     <Col xs={12} sm={6} md={4}>
-      <img
-        src={imagePath}
-        alt={`${name} topping`}
-      />
+      <div
+        style={{
+          width: '10em',
+          height: '10em',
+      }}>
+        <img
+          src={imagePath}
+          alt={`${name} topping`}
+          style={{
+            borderRadius: '100%',
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover'
+          }}
+        />
+      </div>
       <Form.Group
         controlId={`${name}-topping-checkbox`}
       >
