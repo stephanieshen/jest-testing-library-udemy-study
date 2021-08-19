@@ -26,7 +26,9 @@ const OrderSummary = ({ setOrderPhase }) => {
         {scoopsList}
       </ul>
 
-      <p>Toppings {orderDetails.totals.toppings}</p>
+      {orderDetails.toppings.size && (
+        <p>Toppings {orderDetails.totals.toppings}</p>
+      )}
       <ul>
         {toppingsList}
       </ul>

@@ -10,7 +10,11 @@ const OrderEntry = ({ setOrderPhase }) => {
       <Options optionType="scoops" />
       <Options optionType="toppings" />
       <h2>Grand total {orderDetails?.totals?.grandTotal}</h2>
-      <Button type="button" onClick={() => setOrderPhase('review')}>
+      <Button
+        type="button"
+        onClick={() => setOrderPhase('review')}
+        disabled={orderDetails.totals.scoops === '$0.00'}
+      >
         Order Sundae
       </Button>
     </div>
